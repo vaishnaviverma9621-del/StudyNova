@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spring Boot | StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #198754, #0f5132);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .topic-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-4px);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-dark" style="background-color: #198754;">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            StudyNova
+        </a>
+
+        <a href="/Student/Courses" class="btn btn-light btn-sm">
+            ← Back to Courses
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- Course Header -->
+
+<section class="course-header">
+
+    <div class="container">
+
+        <h1 class="fw-bold">
+            🌱 Spring Boot
+        </h1>
+
+        <p class="lead">
+            Learn how to build modern Java web applications
+            using Spring Boot.
+        </p>
+
+        <span class="badge bg-light text-dark">
+            Intermediate
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- Course Content -->
+
+<div class="container py-5">
+
+    <div class="row g-4">
+
+        <!-- Main Content -->
+
+        <div class="col-lg-8">
+
+            <h2 class="fw-bold mb-3">
+                About This Course
+            </h2>
+
+            <p class="text-muted">
+                This course introduces you to Spring Boot and
+                helps you understand how to create Java-based
+                web applications using Spring's powerful
+                framework.
+            </p>
+
+
+            <h3 class="fw-bold mt-5 mb-4">
+                What You'll Learn
+            </h3>
+
+
+            <div class="row g-3">
+
+                <!-- Introduction -->
+
+                <div class="col-md-6">
+
+                    <div class="card topic-card shadow-sm p-3">
+
+                        <h5>🌱 Spring Boot Basics</h5>
+
+                        <p class="text-muted mb-0">
+                            Introduction to Spring Boot,
+                            features and project setup.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Project Structure -->
+
+                <div class="col-md-6">
+
+                    <div class="card topic-card shadow-sm p-3">
+
+                        <h5>🏗️ Project Structure</h5>
+
+                        <p class="text-muted mb-0">
+                            Understand controllers, services,
+                            repositories and application files.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Database -->
+
+                <div class="col-md-6">
+
+                    <div class="card topic-card shadow-sm p-3">
+
+                        <h5>🗄️ Database & JPA</h5>
+
+                        <p class="text-muted mb-0">
+                            Connect applications with databases
+                            using Spring Data JPA.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REST API -->
+
+                <div class="col-md-6">
+
+                    <div class="card topic-card shadow-sm p-3">
+
+                        <h5>🔗 REST APIs</h5>
+
+                        <p class="text-muted mb-0">
+                            Learn how to create controllers
+                            and build RESTful APIs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+<!-- Course Lessons -->
+<div class="mt-5">
+<!-- Course Progress -->
+<div class="card shadow-sm border-0 p-4 mb-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="fw-bold mb-0">📊 Your Progress</h5>
+        <span class="fw-bold text-success" th:text="${progress + '%'}">
+    0%
+</span>
+
+    </div>
+<div th:if="${progress == 100}"
+     class="alert alert-success text-center mt-3">
+    🎉 <strong>Course Completed!</strong>
+    <br>
+    You have completed all Spring Boot lessons.
+</div>
+    <div class="progress-bar bg-success"
+     role="progressbar"
+     th:style="'width: ' + ${progress} + '%;'"
+     th:attr="aria-valuenow=${progress}"
+     aria-valuemin="0"
+     aria-valuemax="100">
+</div>
+   
+<small class="text-muted mt-2">
+    <span th:text="${completedLessons}">0</span> of 5 lessons completed
+</small>
+
+</div>
+    <h3 class="fw-bold mb-4">📚 Course Lessons</h3>
+
+    <div class="list-group shadow-sm">
+
+        <a href="/Student/Course/SpringBoot/Lesson1" class="list-group-item list-group-item-action p-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-1 fw-bold">Lesson 1: Introduction to Spring Boot</h6>
+                    <small class="text-muted">
+                        What is Spring Boot and why we use it
+                    </small>
+                </div>
+                <span class="badge bg-success">Start</span>
+            </div>
+        </a>
+
+        <a href="/Student/Course/SpringBoot/Lesson2" class="list-group-item list-group-item-action p-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-1 fw-bold">Lesson 2: Spring Boot Setup</h6>
+                    <small class="text-muted">
+                        Setting up a Spring Boot project
+                    </small>
+                </div>
+                <span class="badge bg-success">Start</span>
+            </div>
+        </a>
+
+        <a href="/Student/Course/SpringBoot/Lesson3"class="list-group-item list-group-item-action p-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-1 fw-bold">Lesson 3: Project Structure</h6>
+                    <small class="text-muted">
+                        Controllers, Services and Repositories
+                    </small>
+                </div>
+                <span class="badge bg-success">Start</span>
+            </div>
+        </a>
+
+        <a href="/Student/Course/SpringBoot/Lesson4" class="list-group-item list-group-item-action p-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-1 fw-bold">Lesson 4: Controllers</h6>
+                    <small class="text-muted">
+                        Handling requests with Spring Controllers
+                    </small>
+                </div>
+                <span class="badge bg-success">Start</span>
+            </div>
+        </a>
+
+        <a href="/Student/Course/SpringBoot/Lesson5" class="list-group-item list-group-item-action p-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-1 fw-bold">Lesson 5: Spring Data JPA</h6>
+                    <small class="text-muted">
+                        Connecting Spring Boot with a database
+                    </small>
+                </div>
+                <span class="badge bg-success">Start</span>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+<div class="text-center mt-5">
+
+    <h3 class="fw-bold mb-3">📝 Test Your Knowledge</h3>
+
+    <p class="text-muted">
+        Complete the quiz after finishing the lessons.
+    </p>
+
+    <a href="/Student/Course/SpringBoot/Quiz"
+       class="btn btn-success px-4">
+        Start Quiz
+    </a>
+
+</div>
+<div th:if="${session.springBootQuizCompleted}"
+     class="alert alert-success text-center mt-3">
+    🎉 <strong>Quiz Completed!</strong>
+    <br>
+    You have successfully completed the Spring Boot quiz.
+</div>
+        <!-- Course Card -->
+
+        <div class="col-lg-4">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body p-4">
+
+                    <h4 class="fw-bold">
+                        Spring Boot
+                    </h4>
+
+                    <hr>
+
+                    <p>
+                        📚 <strong>Lessons:</strong> 25+
+                    </p>
+
+                    <p>
+                        ⏱️ <strong>Duration:</strong> Self-paced
+                    </p>
+
+                    <p>
+                        🎯 <strong>Level:</strong> Intermediate
+                    </p>
+
+                    <a href="#"
+                       class="btn w-100 mt-3 text-white"
+                       style="background-color: #198754;">
+                        Enroll Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
+

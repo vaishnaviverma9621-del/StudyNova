@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Messages - StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            StudyNova
+        </a>
+
+        <span class="text-white">
+            Contact Messages
+        </span>
+
+    </div>
+</nav>
+
+
+<!-- Main Content -->
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold">
+                📩 Contact Messages
+            </h2>
+
+            <p class="text-muted">
+                View messages submitted by StudyNova students.
+            </p>
+        </div>
+
+        <a href="/Admin/Dashboard"
+           class="btn btn-secondary">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Messages Table -->
+    <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-primary">
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Message</th>
+                            <th>Submitted At</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr th:each="contact : ${contacts}">
+
+                            <td th:text="${contact.name}">
+                                Student
+                            </td>
+
+                            <td th:text="${contact.email}">
+                                email
+                            </td>
+
+                            <td th:text="${contact.course}">
+                                Course
+                            </td>
+
+                            <td th:text="${contact.message}">
+                                Message
+                            </td>
+
+                            <td th:text="${contact.submittedAt}">
+                                Date
+                            </td>
+
+                            <td>
+                                <a th:href="@{/Admin/Contacts/Delete/{id}(id=${contact.id})}"
+                                   class="btn btn-sm btn-danger">
+                                    Delete
+                                </a>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- No Messages -->
+                        <tr th:if="${#lists.isEmpty(contacts)}">
+
+                            <td colspan="6"
+                                class="text-center text-muted py-4">
+
+                                No contact messages yet.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

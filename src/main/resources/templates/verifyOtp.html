@@ -1,0 +1,36 @@
+<html th:replace="~{base::layout(~{::main})}">
+<body>
+	<main>
+		<div class="rpw py-5">
+			<div class="col-md-6 mx-auto p-4">
+				<div class="card-shadow">
+					<div class="card-header bg-primary text-white">
+						<h4>Please verify OTP</h4>
+						<p>
+							sent to <span th:text="${session.email}"></span>
+						</p>
+					</div>
+
+					<div class="card-body">
+						<form method="post">
+							<input type="text" class="form-control" name="otp"
+								placeholder="Enter otp here..." required>
+							<div class="mt-4 px-3 d-flex justify-content-between align-items-center">
+							<a href="/resend-otp" class="">Resend Otp</a>
+								<button type="submit" class="btn btn-primary">Verify
+									OTP</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var msg = "[[${msg}]]";
+			if (msg != "") {
+				alert(msg);
+			}
+		</script>
+	</main>
+</body>
+</html>

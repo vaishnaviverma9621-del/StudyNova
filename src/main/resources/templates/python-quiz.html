@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quiz | StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark" style="background:#306998;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/Student/Course/Python">
+            🐍 StudyNova - Python
+        </a>
+    </div>
+</nav>
+
+<div class="container mt-5 mb-5">
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+
+            <h2 class="fw-bold" style="color:#306998;">
+                📝 Python Quiz
+            </h2>
+
+            <p class="text-muted">
+                Test your knowledge of Python basics.
+            </p>
+
+            <hr>
+
+            <!-- Question 1 -->
+            <div class="mb-4">
+                <h5>1. Which keyword is used to define a function in Python?</h5>
+
+                <div>
+                    <input type="radio" name="q1" value="a"> a) function
+                </div>
+                <div>
+                    <input type="radio" name="q1" value="b"> b) def
+                </div>
+                <div>
+                    <input type="radio" name="q1" value="c"> c) fun
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="mb-4">
+                <h5>2. Which data type is used to store True or False?</h5>
+
+                <div>
+                    <input type="radio" name="q2" value="a"> a) String
+                </div>
+                <div>
+                    <input type="radio" name="q2" value="b"> b) Integer
+                </div>
+                <div>
+                    <input type="radio" name="q2" value="c"> c) Boolean
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="mb-4">
+                <h5>3. Which symbol is used for comments in Python?</h5>
+
+                <div>
+                    <input type="radio" name="q3" value="a"> a) #
+                </div>
+                <div>
+                    <input type="radio" name="q3" value="b"> b) //
+                </div>
+                <div>
+                    <input type="radio" name="q3" value="c"> c) /*
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="mb-4">
+                <h5>4. Which loop is commonly used to iterate over a sequence?</h5>
+
+                <div>
+                    <input type="radio" name="q4" value="a"> a) for
+                </div>
+                <div>
+                    <input type="radio" name="q4" value="b"> b) switch
+                </div>
+                <div>
+                    <input type="radio" name="q4" value="c"> c) do-while
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="mb-4">
+                <h5>5. Which collection stores key-value pairs?</h5>
+
+                <div>
+                    <input type="radio" name="q5" value="a"> a) List
+                </div>
+                <div>
+                    <input type="radio" name="q5" value="b"> b) Tuple
+                </div>
+                <div>
+                    <input type="radio" name="q5" value="c"> c) Dictionary
+                </div>
+            </div>
+
+            <button onclick="checkQuiz()" class="btn btn-primary">
+                Check Answers
+            </button>
+
+            <div id="result" class="mt-4"></div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+function checkQuiz() {
+
+    let answers = {
+        q1: "b",
+        q2: "c",
+        q3: "a",
+        q4: "a",
+        q5: "c"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        let selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    let percentage = (score / 5) * 100;
+
+    document.getElementById("result").innerHTML = `
+        <div class="alert alert-info">
+            <h5>Quiz Result</h5>
+            <p class="mb-1">Score: ${score}/5</p>
+            <p class="mb-2">Percentage: ${percentage}%</p>
+
+            <a href="/Student/Course/Python/Quiz/Complete"
+               class="btn btn-success">
+                ✅ Complete Quiz
+            </a>
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>

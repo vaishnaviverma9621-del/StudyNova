@@ -1,0 +1,316 @@
+.btn{
+    border-radius:30px;
+    padding:12px 28px;
+}
+
+section h1{
+    line-height:1.2;
+}
+
+section p{
+    font-size:18px;
+}
+
+
+.hero-section img{
+    transition: all 0.4s ease;
+}
+
+.hero-section img:hover{
+    transform:scale(1.05) translateY(-12px);
+    filter:brightness(1.08);
+}
+
+.about-img{
+    transition: all 0.4s ease;
+   
+
+}
+
+.about-img:hover{
+    transform: scale(1.05) translateY(-12px);
+    filter:brightness(1.08);
+}.navbar{
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.nav-link{
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#FFD166 !important;
+}
+
+
+
+.hero-section{
+background:linear-gradient(135deg,#0d6efd,#4f8dfd);
+}
+
+/**.hero-img{
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}**/
+
+
+.hero-img{
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-12px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.hover-img{
+    transition: all 0.4s ease;
+}
+
+.hover-img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35) !important;
+}
+
+
+
+.card{
+    border: none;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    
+}
+
+.card:hover{
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(13,110,253,0.20) !important;
+    border-top: 5px solid #0d6efd;
+    background:#f8fbff;
+}
+
+.card i{
+    transition:  0.4s ;
+}
+
+.card:hover i{
+    transform: scale(1.2);
+}
+
+
+
+.stat-card{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    transition: .4s;
+    background: white;
+}
+
+.stat-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.22);
+}
+
+.stat-card h1{
+    font-size: 48px;
+}
+
+.stat-card p{
+    font-size: 18px;
+    color: #666;
+}
+
+
+.rounded-circle{
+    object-fit: cover;
+    border:4px solid #0d6efd;
+    transition:.4s;
+}
+
+.rounded-circle:hover{
+    transform:scale(1.1);
+}
+footer a{
+    color: white;
+    transition: all 0.3s ease;
+}
+
+footer a:hover{
+    color: #ffc107 !important;
+    transform: translateY(-5px);
+}
+
+
+
+
+
+#topBtn{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    transition: .3s;
+    z-index: 999;
+}
+
+#topBtn:hover{
+    background: #0b5ed7;
+    color: white;
+    transform: translateY(-5px);
+}
+
+
+
+.register-img{
+    transition:0.4s;
+}
+
+.register-img:hover{
+    transform:scale(1.05);
+}
+
+.btn-primary{
+    transition:0.3s ease;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(13,110,253,.35);
+}
+
+
+
+
+
+.login-img{
+    transition:0.4s ease;
+}
+
+.login-img:hover{
+    transform:scale(1.05);
+}
+
+
+
+
+.login-btn{
+    border-radius:30px;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(13,110,253,.35);
+}
+
+
+.login-card{
+    transition:.4s;
+}
+
+.login-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.2)!important;
+}
+
+
+.login-input{
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.login-input:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 15px rgba(13,110,253,0.25);
+}
+
+.input-group-text{
+    background:#fff;
+    border-radius:0 12px 12px 0;
+}
+
+
+
+
+
+.login-btn{
+    border-radius:50px;
+    transition:0.35s;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(13,110,253,.35);
+}
+
+
+.forgot-link{
+    color:#0d6efd;
+    transition:0.3s;
+}
+
+.forgot-link:hover{
+    color:#084298;
+    text-decoration:underline !important;
+}
+
+.register-link{
+    transition:0.3s;
+}
+
+.register-link:hover{
+    letter-spacing:1px;
+}
+
+
+
+
+.logo-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #FF8C42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-circle i {
+    color: white;
+    font-size: 22px;
+}

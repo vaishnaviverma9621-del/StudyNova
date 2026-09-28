@@ -1,0 +1,232 @@
+<html th:replace="~{base::layout(~{::main})}">
+<body>
+
+<main>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h2>Student Registration Form</h2>
+                </div>
+
+<div class="text-center mt-4">
+   
+
+
+<img th:src="@{/images/image4.png}"
+     class="img-fluid register-img"
+     style="max-height:180px;"
+     alt="Register">
+                <div class="card-body p-4">
+
+                    <form method="post" action="/Register">
+
+                       <h4 class="text-primary fw-bold mb-3">
+    <i class="fa-solid fa-user me-2"></i>
+    Personal Details
+</h4>
+
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+    <i class="fa-solid fa-user text-primary me-2"></i>
+    Full Name
+</label>
+
+                                <input type="text" class="form-control" name="name" placeholder="Enter your full name">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                              
+<label class="form-label">
+    <i class="fa-solid fa-venus-mars text-primary me-2"></i>
+    Gender
+</label>
+                                <select class="form-select" name="gender">
+                                    <option selected>Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                               
+<label class="form-label">
+    <i class="fa-solid fa-calendar text-primary me-2"></i>
+    Date of Birth
+</label>
+                                <input type="date" class="form-control" name="dob">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                
+<label class="form-label">
+    <i class="fa-solid fa-id-card text-primary me-2"></i>
+    Aadhar Number
+</label>
+                                <input type="text" class="form-control" name="aadharNo">
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                       
+<h4 class="text-primary fw-bold mb-3">
+    <i class="fa-solid fa-address-book me-2"></i>
+    Contact Details
+</h4>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                               
+<label class="form-label">
+    <i class="fa-solid fa-envelope text-primary me-2"></i>
+    Email
+</label>
+                                <input type="email" class="form-control" name="email">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                               
+<label class="form-label">
+    <i class="fa-solid fa-phone text-primary me-2"></i>
+    Contact Number
+</label>
+                                <input type="text" class="form-control" name="contactNo">
+                            </div>
+
+                            <div class="col-md-12 mb-3">
+                               
+<label class="form-label">
+    <i class="fa-solid fa-lock text-primary me-2"></i>
+    Password
+</label>
+                              
+<div class="input-group">
+    <input type="password"
+           class="form-control"
+           id="regPassword"
+           name="password"
+           placeholder="Enter Password">
+
+    <span class="input-group-text" onclick="toggleRegPassword()" style="cursor:pointer;">
+        <i class="fa-solid fa-eye" id="regEye"></i>
+    </span>
+</div>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                       
+<h4 class="text-primary fw-bold mb-3">
+    <i class="fa-solid fa-school me-2"></i>
+    Academic Details
+</h4>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                
+<label class="form-label">
+    <i class="fa-solid fa-building-columns text-primary me-2"></i>
+    College Name
+</label>
+                                <input type="text" class="form-control" name="collegeName">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                
+<label class="form-label">
+    <i class="fa-solid fa-book-open text-primary me-2"></i>
+    Course
+</label>
+                                <input type="text" class="form-control" name="course">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+<label class="form-label">
+    <i class="fa-solid fa-code-branch text-primary me-2"></i>
+    Branch
+</label>
+                                <input type="text" class="form-control" name="branch">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                
+<label class="form-label">
+    <i class="fa-solid fa-graduation-cap text-primary me-2"></i>
+    Year
+</label>
+                                <select class="form-select" name="year">
+                                    <option>Select Year</option>
+                                    <option>1st Year</option>
+                                    <option>2nd Year</option>
+                                    <option>3rd Year</option>
+                                    <option>4th Year</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="text-center mt-4">
+                            
+<button type="submit" class="btn btn-primary register-btn px-5">
+    <i class="fa-solid fa-user-plus me-2"></i>
+    Create Account
+</button>
+
+                            
+<button type="reset" class="btn btn-outline-secondary px-5 ms-2">
+    <i class="fa-solid fa-rotate-left me-2"></i>
+    Reset
+</button>                       
+ </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script >
+    var msg = "[[${msg}]]";
+
+    if (msg != "") {
+        alert(msg);
+    }
+</script>
+</main>
+<script>
+function toggleRegPassword(){
+
+    let password = document.getElementById("regPassword");
+    let eye = document.getElementById("regEye");
+
+    if(password.type === "password"){
+        password.type = "text";
+        eye.classList.replace("fa-eye","fa-eye-slash");
+    }else{
+        password.type = "password";
+        eye.classList.replace("fa-eye-slash","fa-eye");
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 2 | StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .lesson-header {
+            background: linear-gradient(135deg, #198754, #0f5132);
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .content-card {
+            border: none;
+            border-radius: 12px;
+        }
+
+        .step-box {
+            border-left: 4px solid #198754;
+            background-color: #f1f8f4;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark" style="background-color: #198754;">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            StudyNova
+        </a>
+
+        <a href="/Student/Course/SpringBoot"
+           class="btn btn-light btn-sm">
+            ← Back to Course
+        </a>
+
+    </div>
+</nav>
+
+
+<!-- Lesson Header -->
+<section class="lesson-header">
+    <div class="container">
+
+        <span class="badge bg-light text-dark mb-3">
+            Lesson 2
+        </span>
+
+        <h1 class="fw-bold">
+            Spring Boot Setup
+        </h1>
+
+        <p class="lead mb-0">
+            Learn how to create and set up a Spring Boot project.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- Lesson Content -->
+<div class="container py-5">
+
+    <div class="card content-card shadow-sm p-4">
+
+        <h2 class="fw-bold mb-3">
+            ⚙️ Setting Up Spring Boot
+        </h2>
+
+        <p>
+            Before creating a Spring Boot application, we need to
+            set up the required development environment.
+        </p>
+
+
+        <h3 class="fw-bold mt-4 mb-3">
+            Requirements
+        </h3>
+
+        <ul>
+            <li>Java Development Kit (JDK)</li>
+            <li>IDE such as Eclipse or IntelliJ IDEA</li>
+            <li>Maven</li>
+            <li>Internet connection for downloading dependencies</li>
+        </ul>
+
+
+        <h3 class="fw-bold mt-4 mb-3">
+            Steps to Create a Project
+        </h3>
+
+        <div class="step-box">
+            <strong>Step 1:</strong>
+            Open Spring Initializr.
+        </div>
+
+        <div class="step-box">
+            <strong>Step 2:</strong>
+            Select Java as the programming language.
+        </div>
+
+        <div class="step-box">
+            <strong>Step 3:</strong>
+            Select Maven as the project type.
+        </div>
+
+        <div class="step-box">
+            <strong>Step 4:</strong>
+            Choose the required Spring Boot dependencies.
+        </div>
+
+        <div class="step-box">
+            <strong>Step 5:</strong>
+            Generate the project and open it in your IDE.
+        </div>
+
+
+        <h3 class="fw-bold mt-4">
+            📌 Important
+        </h3>
+
+        <div class="alert alert-success">
+            Spring Initializr makes it easy to create a
+            ready-to-use Spring Boot project with the required
+            configuration and dependencies.
+        </div>
+
+
+        <!-- Complete Button -->
+        <div class="text-center mt-4">
+
+            
+<a href="/Student/Course/SpringBoot/Lesson2/Complete"
+   class="btn btn-success">
+    Mark as Complete
+</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

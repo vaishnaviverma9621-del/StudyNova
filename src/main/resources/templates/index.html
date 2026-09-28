@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base::layout(~{::main})}">
+
+<body>
+
+<main>
+
+<div class="row">
+
+<div class="col-sm-11 mx-auto">
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="container-fluid hero-section py-5 bg-primary text-white">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <h1 class="display-4 fw-bold">
+                    Learn Smarter with StudyNova
+                </h1>
+
+                <h3 class="mt-3">
+                    Learn. Practice. Grow.
+                </h3>
+
+                <p class="lead mt-3">
+                    Learn programming through structured courses,
+                    interactive lessons and mock tests.
+                </p>
+
+                <a href="/Student/Courses"
+                   class="btn btn-light btn-lg rounded-pill px-4 me-2 mt-3">
+                    Explore Courses
+                </a>
+
+                <a href="/Student/MockTests"
+                   class="btn btn-outline-light btn-lg rounded-pill px-4 mt-3">
+                    Take Free Test
+                </a>
+
+                <div class="mt-4">
+
+                    <span class="badge bg-light text-primary p-3 me-2">
+                        📚 6 Courses
+                    </span>
+
+                    <span class="badge bg-light text-primary p-3 me-2">
+                        📝 Mock Tests
+                    </span>
+
+                    <span class="badge bg-light text-primary p-3">
+                        📈 Progress Tracking
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 text-center mt-4 mt-lg-0">
+
+                <div class="hero-img">
+
+                    <img th:src="@{/images/image3.jpg}"
+                         class="img-fluid rounded-4 shadow-lg border border-3 border-light hover-img"
+                         style="max-height:430px;"
+                         alt="StudyNova Learning">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= POPULAR COURSES ================= -->
+
+<div class="container py-5">
+
+    <h2 class="text-center fw-bold mb-5">
+        Popular Courses
+    </h2>
+
+    <div class="row g-4">
+
+
+        <!-- Java -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm p-4 text-center h-100">
+
+                <i class="fa-brands fa-java fa-3x text-primary"></i>
+
+                <h4 class="mt-3">
+                    Java
+                </h4>
+
+                <p>
+                    Learn Java programming and core concepts.
+                </p>
+
+                <a href="/Student/Course/Java"
+                   class="btn btn-outline-primary">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Python -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm p-4 text-center h-100">
+
+                <i class="fa-brands fa-python fa-3x text-warning"></i>
+
+                <h4 class="mt-3">
+                    Python
+                </h4>
+
+                <p>
+                    Learn Python from basics to practical concepts.
+                </p>
+
+                <a href="/Student/Course/Python"
+                   class="btn btn-outline-warning">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Web Development -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm p-4 text-center h-100">
+
+                <i class="fa-solid fa-code fa-3x text-success"></i>
+
+                <h4 class="mt-3">
+                    Web Development
+                </h4>
+
+                <p>
+                    HTML, CSS, Bootstrap and JavaScript.
+                </p>
+
+                <a href="/Student/Course/WebDevelopment"
+                   class="btn btn-outline-success">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Spring Boot -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm p-4 text-center h-100">
+
+                <i class="fa-solid fa-leaf fa-3x text-success"></i>
+
+                <h4 class="mt-3">
+                    Spring Boot
+                </h4>
+
+                <p>
+                    Build modern Java web applications.
+                </p>
+
+                <a href="/Student/Course/SpringBoot"
+                   class="btn btn-outline-success">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SQL -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm p-4 text-center h-100">
+
+                <i class="fa-solid fa-database fa-3x text-danger"></i>
+
+                <h4 class="mt-3">
+                    SQL
+                </h4>
+
+                <p>
+                    Learn databases, queries and SQL concepts.
+                </p>
+
+                <a href="/Student/Course/SQL"
+                   class="btn btn-outline-danger">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- C++ -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm p-4 text-center h-100">
+
+                <i class="fa-solid fa-terminal fa-3x text-dark"></i>
+
+                <h4 class="mt-3">
+                    C++
+                </h4>
+
+                <p>
+                    Learn programming, OOP and C++ fundamentals.
+                </p>
+
+                <a href="/Student/Course/CPP"
+                   class="btn btn-outline-dark">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= WHY CHOOSE STUDYNOVA ================= -->
+
+<div class="container py-5">
+
+    <h2 class="text-center fw-bold mb-5">
+        Why Choose StudyNova?
+    </h2>
+
+    <div class="row g-4">
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm text-center p-4 h-100">
+
+                <i class="fa-solid fa-book fa-3x text-primary"></i>
+
+                <h5 class="mt-3">
+                    Structured Learning
+                </h5>
+
+                <p>
+                    Learn through organized lessons and courses.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm text-center p-4 h-100">
+
+                <i class="fa-solid fa-file-circle-check fa-3x text-success"></i>
+
+                <h5 class="mt-3">
+                    Mock Tests
+                </h5>
+
+                <p>
+                    Test your understanding with course quizzes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm text-center p-4 h-100">
+
+                <i class="fa-solid fa-chart-line fa-3x text-warning"></i>
+
+                <h5 class="mt-3">
+                    Track Progress
+                </h5>
+
+                <p>
+                    Monitor completed lessons and learning progress.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm text-center p-4 h-100">
+
+                <i class="fa-solid fa-laptop-code fa-3x text-danger"></i>
+
+                <h5 class="mt-3">
+                    Practical Learning
+                </h5>
+
+                <p>
+                    Build programming knowledge through practical lessons.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROJECT STATS ================= -->
+
+<div class="container py-5">
+
+    <div class="row text-center g-4">
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm p-4 h-100">
+
+                <h1 class="text-primary fw-bold">
+                    6
+                </h1>
+
+                <p class="mb-0">
+                    Courses
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm p-4 h-100">
+
+                <h1 class="text-primary fw-bold">
+                    50+
+                </h1>
+
+                <p class="mb-0">
+                    Lessons
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm p-4 h-100">
+
+                <h1 class="text-primary fw-bold">
+                    6
+                </h1>
+
+                <p class="mb-0">
+                    Mock Tests
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm p-4 h-100">
+
+                <h1 class="text-primary fw-bold">
+                    1
+                </h1>
+
+                <p class="mb-0">
+                    Learning Platform
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDENT FEEDBACK ================= -->
+
+<div class="container py-5">
+
+    <h2 class="text-center fw-bold mb-5">
+        Student Feedback
+    </h2>
+
+    <div class="row g-4">
+
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm border-0 rounded-4 p-4 text-center h-100">
+
+                <div class="fs-1">
+                    👨‍🎓
+                </div>
+
+                <h5>
+                    Rahul
+                </h5>
+
+                <div class="text-warning mb-3">
+                    ★★★★★
+                </div>
+
+                <p class="text-muted">
+                    "The structured lessons and mock tests
+                    make learning easier."
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm border-0 rounded-4 p-4 text-center h-100">
+
+                <div class="fs-1">
+                    👩‍🎓
+                </div>
+
+                <h5>
+                    Priya
+                </h5>
+
+                <div class="text-warning mb-3">
+                    ★★★★★
+                </div>
+
+                <p class="text-muted">
+                    "The courses are simple and easy
+                    to follow."
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm border-0 rounded-4 p-4 text-center h-100">
+
+                <div class="fs-1">
+                    👨‍💻
+                </div>
+
+                <h5>
+                    Aman
+                </h5>
+
+                <div class="text-warning mb-3">
+                    ★★★★★
+                </div>
+
+                <p class="text-muted">
+                    "Progress tracking motivates me
+                    to complete my lessons."
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FAQ ================= -->
+
+<div class="container py-5">
+
+    <h2 class="text-center fw-bold mb-5">
+        Frequently Asked Questions
+    </h2>
+
+    <div class="accordion" id="faqAccordion">
+
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1">
+
+                    What is StudyNova?
+
+                </button>
+
+            </h2>
+
+            <div id="faq1"
+                 class="accordion-collapse collapse show">
+
+                <div class="accordion-body">
+
+                    StudyNova is a learning and testing platform
+                    that provides programming courses, lessons,
+                    quizzes and progress tracking.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
+
+                    How can I register?
+
+                </button>
+
+            </h2>
+
+            <div id="faq2"
+                 class="accordion-collapse collapse">
+
+                <div class="accordion-body">
+
+                    Click on Registration, fill in your details
+                    and complete OTP verification.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3">
+
+                    What courses are available?
+
+                </button>
+
+            </h2>
+
+            <div id="faq3"
+                 class="accordion-collapse collapse">
+
+                <div class="accordion-body">
+
+                    StudyNova currently provides Java, Python,
+                    Web Development, Spring Boot, SQL and C++ courses.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq4">
+
+                    Can I track my learning progress?
+
+                </button>
+
+            </h2>
+
+            <div id="faq4"
+                 class="accordion-collapse collapse">
+
+                <div class="accordion-body">
+
+                    Yes. The Student Dashboard displays completed
+                    lessons and overall learning progress.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</main>
+
+</body>
+
+</html>

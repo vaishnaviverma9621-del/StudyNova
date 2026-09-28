@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 5 | StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .lesson-header {
+            background: linear-gradient(135deg, #198754, #0f5132);
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .content-card {
+            border: none;
+            border-radius: 12px;
+        }
+
+        .code-box {
+            background-color: #212529;
+            color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark" style="background-color: #198754;">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            StudyNova
+        </a>
+
+        <a href="/Student/Course/SpringBoot"
+           class="btn btn-light btn-sm">
+            ← Back to Course
+        </a>
+
+    </div>
+</nav>
+
+
+<!-- Lesson Header -->
+<section class="lesson-header">
+    <div class="container">
+
+        <span class="badge bg-light text-dark mb-3">
+            Lesson 5
+        </span>
+
+        <h1 class="fw-bold">
+            Spring Data JPA
+        </h1>
+
+        <p class="lead mb-0">
+            Learn how Spring Boot applications communicate with databases.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- Lesson Content -->
+<div class="container py-5">
+
+    <div class="card content-card shadow-sm p-4">
+
+        <h2 class="fw-bold mb-3">
+            🗄️ What is Spring Data JPA?
+        </h2>
+
+        <p>
+            Spring Data JPA is a part of the Spring ecosystem that
+            makes it easier to work with databases in Java applications.
+        </p>
+
+        <p>
+            It reduces the amount of database-related code that
+            developers need to write.
+        </p>
+
+
+        <h3 class="fw-bold mt-4">
+            🔹 What is JPA?
+        </h3>
+
+        <p>
+            JPA stands for <strong>Java Persistence API</strong>.
+            It provides a standard way to map Java objects to
+            database tables.
+        </p>
+
+
+        <h3 class="fw-bold mt-4">
+            🔹 Repository
+        </h3>
+
+        <p>
+            A repository is used to perform database operations
+            such as saving, finding and deleting records.
+        </p>
+
+
+        <h3 class="fw-bold mt-4">
+            Simple Example
+        </h3>
+
+        <div class="code-box mt-3">
+<pre class="mb-0">import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository
+        extends JpaRepository&lt;User, Long&gt; {
+
+}</pre>
+        </div>
+
+
+        <h3 class="fw-bold mt-4">
+            📌 Common Operations
+        </h3>
+
+        <ul>
+            <li>Save data</li>
+            <li>Find data</li>
+            <li>Update data</li>
+            <li>Delete data</li>
+        </ul>
+
+
+        <div class="alert alert-success mt-4">
+            <strong>Key Point:</strong>
+            Spring Data JPA simplifies database operations
+            by providing ready-to-use repository methods.
+        </div>
+
+
+        <!-- Complete Button -->
+        <div class="text-center mt-4">
+
+           
+<a href="/Student/Course/SpringBoot/Lesson5/Complete"
+   class="btn btn-success">
+    Mark as Complete
+</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

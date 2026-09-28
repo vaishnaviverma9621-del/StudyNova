@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Development | StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #ff8c42, #e85d04);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .module-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .module-number {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ff8c42;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark" style="background-color:#ff8c42;">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="/Student/Courses">
+            StudyNova
+        </a>
+
+        <a href="/Student/Courses"
+           class="btn btn-light btn-sm">
+            ← Back to Courses
+        </a>
+
+    </div>
+</nav>
+
+
+<!-- Course Header -->
+<section class="course-header">
+
+    <div class="container">
+
+        <h1 class="fw-bold">
+            🌐 Web Development
+        </h1>
+
+        <p class="lead">
+            Learn how to create modern, responsive and interactive websites.
+        </p>
+
+        <span class="badge bg-light text-dark">
+            Beginner Friendly
+        </span>
+
+    </div>
+
+</section>
+
+
+<div class="container py-5">
+
+    <!-- About -->
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-body p-4">
+
+            <h2 class="fw-bold mb-3">
+                About This Course
+            </h2>
+
+            <p class="text-muted mb-0">
+                Learn HTML, CSS, JavaScript and Bootstrap while building
+                responsive and interactive websites.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Progress -->
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-body p-4">
+
+            <h4 class="fw-bold">
+                📊 Course Progress
+            </h4>
+
+            <div class="d-flex justify-content-between mt-3">
+
+                <span>Progress</span>
+
+                <span class="fw-bold text-primary"
+                      th:text="${progress + '%'}">
+                    0%
+                </span>
+
+            </div>
+
+            <div class="progress mt-2">
+
+                <div class="progress-bar bg-primary"
+                     role="progressbar"
+                     th:style="'width: ' + ${progress} + '%;'"
+                     th:attr="aria-valuenow=${progress}"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+                </div>
+
+            </div>
+
+            <small class="text-muted mt-2 d-block">
+
+                <span th:text="${completedLessons}">
+                    0
+                </span>
+
+                of 10 lessons completed
+
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- Lessons -->
+    <h2 class="fw-bold mb-4">
+        📚 Course Modules
+    </h2>
+
+
+    <!-- Lesson 1 -->
+    <a href="/Student/Course/WebDevelopment/Lesson1"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">1</div>
+
+            <div>
+                <h5 class="mb-1">HTML Basics</h5>
+
+                <p class="mb-0 text-muted">
+                    HTML structure, tags and basic webpage creation.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 1 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 2 -->
+    <a href="/Student/Course/WebDevelopment/Lesson2"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">2</div>
+
+            <div>
+                <h5 class="mb-1">HTML Forms & Tables</h5>
+
+                <p class="mb-0 text-muted">
+                    Forms, tables and collecting user information.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 2 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 3 -->
+    <a href="/Student/Course/WebDevelopment/Lesson3"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">3</div>
+
+            <div>
+                <h5 class="mb-1">CSS Basics</h5>
+
+                <p class="mb-0 text-muted">
+                    Styling, colors, fonts and CSS basics.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 3 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 4 -->
+    <a href="/Student/Course/WebDevelopment/Lesson4"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">4</div>
+
+            <div>
+                <h5 class="mb-1">CSS Layout & Flexbox</h5>
+
+                <p class="mb-0 text-muted">
+                    Learn layouts and Flexbox.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 4 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 5 -->
+    <a href="/Student/Course/WebDevelopment/Lesson5"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">5</div>
+
+            <div>
+                <h5 class="mb-1">Responsive Design</h5>
+
+                <p class="mb-0 text-muted">
+                    Create websites for mobile, tablet and desktop.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 5 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 6 -->
+    <a href="/Student/Course/WebDevelopment/Lesson6"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">6</div>
+
+            <div>
+                <h5 class="mb-1">JavaScript Basics</h5>
+
+                <p class="mb-0 text-muted">
+                    Variables, functions and JavaScript fundamentals.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 6 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 7 -->
+    <a href="/Student/Course/WebDevelopment/Lesson7"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">7</div>
+
+            <div>
+                <h5 class="mb-1">JavaScript DOM</h5>
+
+                <p class="mb-0 text-muted">
+                    Learn how JavaScript interacts with HTML elements.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 7 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 8 -->
+    <a href="/Student/Course/WebDevelopment/Lesson8"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">8</div>
+
+            <div>
+                <h5 class="mb-1">Bootstrap</h5>
+
+                <p class="mb-0 text-muted">
+                    Responsive layouts and Bootstrap components.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 8 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 9 -->
+    <a href="/Student/Course/WebDevelopment/Lesson9"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">9</div>
+
+            <div>
+                <h5 class="mb-1">Website Project</h5>
+
+                <p class="mb-0 text-muted">
+                    Combine HTML, CSS, JavaScript and Bootstrap.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 9 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- Lesson 10 -->
+    <a href="/Student/Course/WebDevelopment/Lesson10"
+       class="card module-card shadow-sm p-3 mb-3 text-decoration-none text-dark">
+
+        <div class="d-flex align-items-center">
+
+            <div class="module-number me-3">10</div>
+
+            <div>
+                <h5 class="mb-1">Mini Project</h5>
+
+                <p class="mb-0 text-muted">
+                    Build a simple personal profile webpage.
+                </p>
+
+                <small class="text-primary">
+                    Start Lesson 10 →
+                </small>
+            </div>
+
+        </div>
+
+    </a>
+
+<div class="text-center mt-4">
+    <a href="/Student/Course/WebDevelopment/Quiz"
+       class="btn btn-warning px-4">
+        📝 Take Web Development Quiz
+    </a>
+</div>
+    <!-- Completion -->
+    <div class="alert alert-success mt-4">
+        🎉 Complete all 10 lessons to finish the Web Development course.
+    </div>
+
+</div>
+
+</body>
+</html>

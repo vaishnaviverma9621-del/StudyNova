@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SQL | StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #198754, #0f5132);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .lesson-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .lesson-number {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: #198754;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark" style="background-color: #198754;">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            📚 StudyNova
+        </a>
+
+        <a href="/Student/Courses" class="btn btn-light btn-sm">
+            ← Back to Courses
+        </a>
+
+    </div>
+</nav>
+
+
+<!-- Course Header -->
+<section class="course-header">
+    <div class="container">
+
+        <h1 class="fw-bold">
+            🗄️ SQL & Database
+        </h1>
+
+        <p class="lead">
+            Learn SQL and understand how to create,
+            manage and query databases.
+        </p>
+
+        <span class="badge bg-light text-dark">
+            Beginner Friendly
+        </span>
+
+    </div>
+</section>
+
+
+<div class="container py-5">
+
+    <!-- Progress -->
+    <div class="card shadow-sm border-0 mb-5">
+        <div class="card-body p-4">
+
+            <div class="d-flex justify-content-between">
+                <h4 class="fw-bold">📊 Course Progress</h4>
+
+                <span class="fw-bold text-success"
+                      th:text="${progress + '%'}">
+                    0%
+                </span>
+            </div>
+
+            <div class="progress mt-3" style="height: 12px;">
+
+                <div class="progress-bar bg-success"
+                     role="progressbar"
+                     th:style="'width: ' + ${progress} + '%;'"
+                     th:attr="aria-valuenow=${progress}"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+                </div>
+
+            </div>
+
+            <small class="text-muted mt-2 d-block">
+
+                <span th:text="${completedLessons}">
+                    0
+                </span>
+
+                of 10 lessons completed
+
+            </small>
+
+        </div>
+    </div>
+
+
+    <!-- Course Introduction -->
+    <div class="mb-5">
+
+        <h2 class="fw-bold">
+            About This Course
+        </h2>
+
+        <p class="text-muted">
+            This course introduces you to SQL and database
+            concepts. You will learn how to store, manage
+            and retrieve data from databases.
+        </p>
+
+    </div>
+
+
+    <!-- Lessons -->
+    <h2 class="fw-bold mb-4">
+        📚 Course Lessons
+    </h2>
+
+
+    <div class="row g-4">
+
+
+        <!-- Lesson 1 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson1"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            1
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                Introduction to SQL
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Learn SQL and its uses.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 2 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson2"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            2
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                Database & Tables
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Understand databases and tables.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 3 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson3"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            3
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                SELECT Statement
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Retrieve data from tables.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 4 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson4"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            4
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                WHERE & Operators
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Filter data using conditions.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 5 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson5"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            5
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                INSERT, UPDATE & DELETE
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Learn basic data modification commands.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 6 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson6"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            6
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                ORDER BY & LIMIT
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Sort and limit query results.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 7 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson7"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            7
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                Aggregate Functions
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Learn COUNT, SUM, AVG, MAX and MIN.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 8 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson8"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            8
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                GROUP BY & HAVING
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Group and filter grouped records.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 9 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson9"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            9
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                SQL Joins
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Combine data from multiple tables.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Lesson 10 -->
+        <div class="col-md-6">
+
+            <a href="/Student/Course/SQL/Lesson10"
+               class="text-decoration-none text-dark">
+
+                <div class="card lesson-card shadow-sm h-100">
+
+                    <div class="card-body p-4 d-flex align-items-center">
+
+                        <div class="lesson-number me-3">
+                            10
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold">
+                                Mini SQL Project
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Create a simple student database.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Quiz -->
+    <div class="card shadow-sm border-0 mt-5">
+
+        <div class="card-body p-4 text-center">
+
+            <h3 class="fw-bold">
+                📝 SQL Quiz
+            </h3>
+
+            <p class="text-muted">
+                Complete the quiz and test your SQL knowledge.
+            </p>
+
+            <a href="/Student/Course/SQL/Quiz"
+               class="btn btn-success px-4">
+                Take SQL Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

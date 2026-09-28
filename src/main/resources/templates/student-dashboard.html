@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard - StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .welcome-box {
+            background: linear-gradient(135deg, #0d6efd, #084298);
+            color: white;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .dashboard-card {
+            border: none;
+            border-radius: 16px;
+            transition: 0.2s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .profile-card {
+            border: none;
+            border-radius: 16px;
+        }
+
+        .progress {
+            height: 12px;
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+        }
+
+        .logout-btn {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            📖 StudyNova
+        </a>
+
+        <div class="d-flex align-items-center">
+
+            <span class="text-white">
+                Student Dashboard
+            </span>
+
+            <a href="/Student/Logout"
+               class="btn btn-light btn-sm logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- Main Container -->
+<div class="container py-5">
+
+    <!-- Welcome Section -->
+    <div class="welcome-box mb-5">
+
+        <h2 class="fw-bold">
+            Welcome,
+            <span th:text="${student.name}">
+                Student
+            </span>
+            👋
+        </h2>
+
+        <p class="mb-0">
+            Continue learning, complete your lessons and track your progress.
+        </p>
+
+    </div>
+
+
+    <!-- Dashboard Cards -->
+    <div class="row g-4">
+
+        <!-- My Courses -->
+        <div class="col-md-4">
+
+            <div class="card dashboard-card shadow-sm h-100">
+
+                <div class="card-body p-4">
+
+                    <div class="fs-1 mb-3">
+                        📚
+                    </div>
+
+                    <h5 class="fw-bold">
+                        My Courses
+                    </h5>
+
+                    <p class="text-muted">
+                        Explore Java, Python, Web Development,
+                        Spring Boot, SQL and C++ courses.
+                    </p>
+
+                    <a href="/Student/Courses"
+                       class="btn btn-primary">
+                        View Courses
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- My Progress -->
+        <div class="col-md-4">
+
+            <div class="card dashboard-card shadow-sm h-100">
+
+                <div class="card-body p-4">
+
+                    <div class="fs-1 mb-3">
+                        📈
+                    </div>
+
+                    <h5 class="fw-bold">
+                        My Progress
+                    </h5>
+
+                    <p class="text-muted">
+                        Track your completed lessons.
+                    </p>
+
+                    <div class="progress mb-2">
+
+                        <div class="progress-bar bg-success"
+                             role="progressbar"
+                             th:style="'width: ' + ${progress} + '%;'"
+                             th:text="${progress} + '%'">
+                            0%
+                        </div>
+
+                    </div>
+
+                    <small class="text-muted">
+
+                        <span th:text="${completedLessons}">
+                            0
+                        </span>
+
+                        /
+
+                        <span th:text="${totalLessons}">
+                            50
+                        </span>
+
+                        lessons completed
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mock Tests -->
+        <div class="col-md-4">
+
+            <div class="card dashboard-card shadow-sm h-100">
+
+                <div class="card-body p-4">
+
+                    <div class="fs-1 mb-3">
+                        📝
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Mock Tests
+                    </h5>
+
+                    <p class="text-muted">
+                        Test your knowledge with course quizzes.
+                    </p>
+
+                    <a href="/Student/MockTests"
+                       class="btn btn-primary">
+                        Take Test
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Profile -->
+    <div class="card profile-card shadow-sm mt-5">
+
+        <div class="card-body p-4">
+
+            <h4 class="fw-bold mb-4">
+                👤 My Profile
+            </h4>
+
+            <div class="row">
+
+                <!-- Name -->
+                <div class="col-md-6 mb-4">
+                    <strong>👤 Name:</strong>
+                    <span th:text="${student.name}">
+                        Student
+                    </span>
+                </div>
+
+
+                <!-- Email -->
+                <div class="col-md-6 mb-4">
+                    <strong>📧 Email:</strong>
+                    <span th:text="${student.email}">
+                        email
+                    </span>
+                </div>
+
+
+                <!-- Contact -->
+                <div class="col-md-6 mb-4">
+                    <strong>📱 Contact:</strong>
+                    <span th:text="${student.contactNo}">
+                        Contact
+                    </span>
+                </div>
+
+
+                <!-- College -->
+                <div class="col-md-6 mb-4">
+                    <strong>🎓 College:</strong>
+                    <span th:text="${student.collegeName}">
+                        College
+                    </span>
+                </div>
+
+
+                <!-- Course -->
+                <div class="col-md-6 mb-4">
+                    <strong>💻 Course:</strong>
+                    <span th:text="${student.course}">
+                        Course
+                    </span>
+                </div>
+
+
+                <!-- Branch -->
+                <div class="col-md-6 mb-4">
+                    <strong>📚 Branch:</strong>
+                    <span th:text="${student.branch}">
+                        Branch
+                    </span>
+                </div>
+
+
+                <!-- Year -->
+                <div class="col-md-6 mb-2">
+                    <strong>📅 Year:</strong>
+                    <span th:text="${student.year}">
+                        Year
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

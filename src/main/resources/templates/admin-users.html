@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Users - StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            StudyNova
+        </a>
+
+        <span class="text-white">
+            Manage Users
+        </span>
+
+    </div>
+</nav>
+
+
+<!-- Main Content -->
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold">
+                👥 Registered Students
+            </h2>
+
+            <p class="text-muted">
+                View and manage registered StudyNova students.
+            </p>
+        </div>
+
+        <a href="/Admin/Dashboard"
+           class="btn btn-secondary">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Users Table -->
+    <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-primary">
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>College</th>
+                            <th>Course</th>
+                            <th>Branch</th>
+                            <th>Year</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <!-- Student Row -->
+                        <tr th:each="student : ${students}">
+
+                            <td th:text="${student.name}">
+                                Student
+                            </td>
+
+                            <td th:text="${student.email}">
+                                email
+                            </td>
+
+                            <td th:text="${student.contactNo}">
+                                Contact
+                            </td>
+
+                            <td th:text="${student.collegeName}">
+                                College
+                            </td>
+
+                            <td th:text="${student.course}">
+                                Course
+                            </td>
+
+                            <td th:text="${student.branch}">
+                                Branch
+                            </td>
+
+                            <td th:text="${student.year}">
+                                Year
+                            </td>
+
+
+                            <!-- Status -->
+                            <td>
+
+                                <span th:if="${student.status.name() == 'BLOCKED'}"
+                                      class="badge bg-danger">
+                                    Blocked
+                                </span>
+
+                                <span th:if="${student.status.name() == 'VERFIED'}"
+                                      class="badge bg-success">
+                                    Verified
+                                </span>
+
+                                <span th:if="${student.status.name() == 'PENDING'}"
+                                      class="badge bg-warning text-dark">
+                                    Pending
+                                </span>
+
+                            </td>
+
+
+                            <!-- Action -->
+                            <td>
+
+                                <a th:if="${student.status.name() != 'BLOCKED'}"
+                                   th:href="@{/Admin/Users/Block/{id}(id=${student.id})}"
+                                   class="btn btn-sm btn-danger">
+                                    Block
+                                </a>
+
+
+                                <a th:if="${student.status.name() == 'BLOCKED'}"
+                                   th:href="@{/Admin/Users/Unblock/{id}(id=${student.id})}"
+                                   class="btn btn-sm btn-success">
+                                    Unblock
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- No Students -->
+                        <tr th:if="${#lists.isEmpty(students)}">
+
+                            <td colspan="9"
+                                class="text-center text-muted py-4">
+
+                                No students registered yet.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

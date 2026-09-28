@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Lesson 8 | StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark" style="background:#306998;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/Student/Course/Python">
+            🐍 StudyNova - Python
+        </a>
+    </div>
+</nav>
+
+<div class="container mt-5 mb-5">
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+
+            <h2 class="fw-bold" style="color:#306998;">
+                Lesson 8: File Handling
+            </h2>
+
+            <hr>
+
+            <h4>What is File Handling?</h4>
+
+            <p>
+                File handling allows Python programs to create, read, write
+                and modify files.
+            </p>
+
+            <h4>Opening a File</h4>
+
+            <pre class="bg-dark text-light p-3 rounded">file = open("student.txt", "r")
+data = file.read()
+print(data)
+file.close()</pre>
+
+            <h4>Writing to a File</h4>
+
+            <pre class="bg-dark text-light p-3 rounded">file = open("student.txt", "w")
+file.write("Welcome to StudyNova!")
+file.close()</pre>
+
+            <h4>Using with Statement</h4>
+
+            <pre class="bg-dark text-light p-3 rounded">with open("student.txt", "r") as file:
+    data = file.read()
+    print(data)</pre>
+
+            <p>
+                The <b>with</b> statement automatically closes the file
+                after the operation is completed.
+            </p>
+
+            <br>
+
+            <a href="/Student/Course/Python/Lesson8/Complete"
+               class="btn btn-success me-2">
+                ✅ Mark as Complete
+            </a>
+
+            <a href="/Student/Course/Python"
+               class="btn btn-secondary">
+                ← Back to Python Course
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

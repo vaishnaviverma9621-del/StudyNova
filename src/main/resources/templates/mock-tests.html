@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mock Tests - StudyNova</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/Student/Dashboard">
+            StudyNova
+        </a>
+
+        <span class="text-white">
+            Mock Tests
+        </span>
+    </div>
+</nav>
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h2>📝 Mock Tests</h2>
+        <p class="text-muted">
+            Test your knowledge with course-wise quizzes.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Java -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5>☕ Java Quiz</h5>
+                    <p class="text-muted">
+                        Test your Java programming knowledge.
+                    </p>
+                   <div th:if="${session.javaQuizCompleted}">
+    <span class="badge bg-success fs-6">✅ Completed</span>
+</div>
+
+<div th:unless="${session.javaQuizCompleted}">
+    <a href="/Student/Course/Java/Quiz"
+       class="btn btn-primary">
+        Start Quiz
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Python -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5>🐍 Python Quiz</h5>
+                    <p class="text-muted">
+                        Test your Python knowledge.
+                    </p>
+                    <div th:if="${session.pythonQuizCompleted}">
+    <span class="badge bg-success fs-6">✅ Completed</span>
+</div>
+
+<div th:unless="${session.pythonQuizCompleted}">
+    <a href="/Student/Course/Python/Quiz"
+       class="btn btn-primary">
+        Start Quiz
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5>🌐 Web Development Quiz</h5>
+                    <p class="text-muted">
+                        Test your web development skills.
+                    </p>
+                    <div th:if="${session.webQuizCompleted}">
+    <span class="badge bg-success fs-6">✅ Completed</span>
+</div>
+
+<div th:unless="${session.webQuizCompleted}">
+    <a href="/Student/Course/WebDevelopment/Quiz"
+       class="btn btn-primary">
+        Start Quiz
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spring Boot -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5>🍃 Spring Boot Quiz</h5>
+                    <p class="text-muted">
+                        Test your Spring Boot knowledge.
+                    </p>
+                    <div th:if="${session.springBootQuizCompleted}">
+    <span class="badge bg-success fs-6">✅ Completed</span>
+</div>
+
+<div th:unless="${session.springBootQuizCompleted}">
+    <a href="/Student/Course/SpringBoot/Quiz"
+       class="btn btn-primary">
+        Start Quiz
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5>🗄️ SQL Quiz</h5>
+                    <p class="text-muted">
+                        Test your SQL knowledge.
+                    </p>
+                    <div th:if="${session.sqlQuizCompleted}">
+    <span class="badge bg-success fs-6">✅ Completed</span>
+</div>
+
+<div th:unless="${session.sqlQuizCompleted}">
+    <a href="/Student/Course/SQL/Quiz"
+       class="btn btn-primary">
+        Start Quiz
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- C++ -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5>💻 C++ Quiz</h5>
+                    <p class="text-muted">
+                        Test your C++ programming knowledge.
+                    </p>
+                    <div th:if="${session.cppQuizCompleted}">
+    <span class="badge bg-success fs-6">✅ Completed</span>
+</div>
+
+<div th:unless="${session.cppQuizCompleted}">
+    <a href="/Student/Course/CPP/Quiz"
+       class="btn btn-primary">
+        Start Quiz
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
